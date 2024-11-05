@@ -75,43 +75,39 @@ export function DocumentTable({
                 return (
                     <TooltipProvider>
                         <div className="flex space-x-2">
-                            {permitState?.check("edit", `Document:${document.id}`, {}, {}) && (
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            className="h-8 w-8 p-0"
-                                            onClick={() => {
-                                                setEditingDocument(document);
-                                                setIsModalOpen(true);
-                                            }}
-                                        >
-                                            <Edit className="h-4 w-4" />
-                                        </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                        <p>Edit document</p>
-                                    </TooltipContent>
-                                </Tooltip>
-                            )}
-                            {permitState?.check("delete", `Document:${document.id}`, {}, {}) && (
-                                <Tooltip>
-                                    <TooltipTrigger asChild>
-                                        <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            className="h-8 w-8 p-0"
-                                            onClick={() => onDocumentDelete(document.id)}
-                                        >
-                                            <Trash2 className="h-4 w-4 text-destructive" />
-                                        </Button>
-                                    </TooltipTrigger>
-                                    <TooltipContent>
-                                        <p>Delete document</p>
-                                    </TooltipContent>
-                                </Tooltip>
-                            )}
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        className="h-8 w-8 p-0"
+                                        onClick={() => {
+                                            setEditingDocument(document);
+                                            setIsModalOpen(true);
+                                        }}
+                                    >
+                                        <Edit className="h-4 w-4" />
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p>Edit document</p>
+                                </TooltipContent>
+                            </Tooltip>
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        className="h-8 w-8 p-0"
+                                        onClick={() => onDocumentDelete(document.id)}
+                                    >
+                                        <Trash2 className="h-4 w-4 text-destructive" />
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p>Delete document</p>
+                                </TooltipContent>
+                            </Tooltip>
                         </div>
                     </TooltipProvider>
                 );
