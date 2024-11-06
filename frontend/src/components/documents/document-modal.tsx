@@ -58,8 +58,8 @@ export function DocumentModal({
 
     // Check permissions
     const canPerformAction = permitState?.check(
-        mode === 'create' ? 'create-document' : 'edit',
-        mode === 'create' ? `Category:${categoryId}` : `Document:${document?.id}`,
+        mode === 'create' ? 'create-document' : 'create-document',
+        `Category:${categoryId}`,
         {},
         {}
     );
